@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <script>
+      const {
+        electron,
+        ipcRenderer
+      } = require('electron')
+      document.addEventListener('DOMContentLoaded', () => {
+        ipcRenderer.send('DOMContentLoaded')
+        console.log('sent')
+        ipcRenderer.on('sqlite3data', (e, data) => {
+          console.log('received')
+          let dataEL = document.getElementById('data')
+          let innerHTML = data.reduce((accumulator, rec) => {
+            return accumulator += `
+            <tr>
+              <td>${rec.id}</td>
+              <td>${rec.simplified}</td>
+              <td>${rec.traditional}</td>
+            </tr>`
+          }, '<table><tbody>')
+          innerHTML += '</tbody></table>'
+          console.log(innerHTML)
+          dataEL.innerHTML = innerHTML
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    We are using node <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+    <div id="data"></div>
+  </body>
+</html>

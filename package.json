@@ -1,0 +1,20 @@
+{
+  "name": "ce-flashcards",
+  "version": "0.0.0",
+  "description": "A Chinese-English flashcard app to help me study",
+  "main": "index.js",
+  "scripts": {
+    "rebuild": "electron-rebuild -f -w sqlite3",
+    "start": "electron ."
+  },
+  "author": "Casey Flynn <cflynn.us@gmail.com>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron": "^8.0.0",
+    "electron-rebuild": "^1.10.0"
+  },
+  "dependencies": {
+    "knex": "^0.20.8",
+    "sqlite3": "^4.1.1"
+  }
+}
