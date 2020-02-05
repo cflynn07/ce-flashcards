@@ -1,0 +1,37 @@
+// Bootstrap Sass Imports
+@import "node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background: #8A2387;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.blog-post img {
+  width: 100%;
+}
+
+// Little custom formatting for code blocks
+pre.prettyprint {
+  @extend .px-2;
+  @for $i from 0 through 9 {
+    li.L#{$i} {
+      list-style-type: decimal;
+    }
+  }
+}
+
+pre.prettyprint {
+  @extend .bg-light;
+}
+
+pre.prettyprint.linenums {
+  @extend .bg-secondary;
+}
+
+// Reference
+// @include media-breakpoint-up(xs) { ... }
+// @include media-breakpoint-up(sm) { ... }
+// @include media-breakpoint-up(md) { ... }
+// @include media-breakpoint-up(lg) { ... }
+// @include media-breakpoint-up(xl) { ... }

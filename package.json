@@ -10,8 +10,11 @@
   "author": "Casey Flynn <cflynn.us@gmail.com>",
   "license": "UNLICENSED",
   "devDependencies": {
+    "bootstrap": "^4.3.1",
     "electron": "^8.0.0",
-    "electron-rebuild": "^1.10.0"
+    "electron-rebuild": "^1.10.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
   },
   "dependencies": {
     "knex": "^0.20.8",
