@@ -11,7 +11,7 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "bootstrap": "^4.3.1",
-    "electron": "^8.0.0",
+    "electron": "^8.5.2",
     "electron-rebuild": "^1.10.0",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2"
